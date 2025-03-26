@@ -118,7 +118,7 @@ You should see a message like:
 - When working inside a cloned repository for your **work account**, override the global configuration by executing these command inside cloned repo:
     ```bash
     git config user.name "Work_Username"
-    git config user.email "abhishekworkgmail.com"
+    git config user.email "abhishekwork@gmail.com"
     ```
 
 - Verify the configuration:
