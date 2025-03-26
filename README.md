@@ -10,13 +10,13 @@ This guide explains how to configure and manage multiple GitHub accounts (e.g., 
     ```bash
     ssh-keygen -t ed25519 -C "abhishek25022004@gmail.com"
     ```
-    - Save it as `~/.ssh/id_ed25519`.
+    - Save it as `~/.ssh/id_ed25519` (Inside .ssh folder).
 
 2. Generate a second SSH key for your work account:
     ```bash
     ssh-keygen -t ed25519 -C "abhishekwork@gmail.com"
     ```
-    - Save it as `~/.ssh/id_ed25519_work`.
+    - Save it as `~/.ssh/id_ed25519_work` (Inside .ssh folder).
 
 ---
 
@@ -107,7 +107,30 @@ You should see a message like:
 
 ---
 
-## ✅ **Additional Step: Set Correct Permissions if something fails**
+## ✅ **Step 7: Configure Git for Multiple Accounts**
+
+- Set your **personal account** as the global configuration:
+    ```bash
+    git config --global user.name "Abhishek-2502"
+    git config --global user.email "abhishek25022004@gmail.com"
+    ```
+
+- When working inside a cloned repository for your **work account**, override the global configuration by executing these command inside cloned repo:
+    ```bash
+    git config user.name "Work_Username"
+    git config user.email "abhishekworkgmail.com"
+    ```
+
+- Verify the configuration:
+    ```bash
+    git config --get user.name
+    git config --get user.email
+    ```
+    If executed inside a work repository, it will display your work credentials. Outside of any repository, it will show your personal (global) credentials.
+
+---
+
+## ✅ **Additional Step: Set Correct Permissions if Something Fails**
 
 Ensure your SSH keys and config file have the correct permissions:
 
@@ -124,4 +147,3 @@ You can now seamlessly manage multiple GitHub accounts using SSH. Let me know if
 
 ## Author
 Abhishek Rajput
-
